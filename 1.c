@@ -19,16 +19,36 @@ int main(void)
         {
             i_n=1;
             if (t < 0)
-                max_i = max_i<-t?(int)t:max_i;
+            {
+                if (max_i < 0)
+                    max_i = -max_i<-t?(int)t:max_i;
+                else
+                    max_i = max_i<-t?(int)t:max_i;
+            }
             else
-                max_i = max_i<t?(int)t:max_i;
+            {
+                if (max_i < 0)
+                    max_i = -max_i<t?(int)t:max_i;
+                else
+                    max_i = max_i<t?(int)t:max_i;
+            }
         }
         else
         {
             if (t < 0)
-                max_d = max_d<-t?t:max_d;
+            {
+                if (max_d < 0)
+                    max_d = -max_d<-t?t:max_d;
+                else
+                    max_d = max_d<-t?t:max_d;
+            }
             else
-                max_d = max_d<t?t:max_d;
+            {
+                if (max_d < 0)
+                    max_d = -max_d<t?t:max_d;
+                else
+                    max_d = max_d<t?t:max_d;
+            }
         }
     }
 
@@ -58,5 +78,5 @@ int main(void)
     입력이 끝난후엔 실수와 정수 중 각각 절대값이 가장큰 것을 출력한다.
     단 실수는 소숫점아래 2자리까지 출력한다.
     만약 실수 혹은 정수가 입력되지 않았다면 그자료형은 출력하지 않는다.
-
+    절대값이 같다면 먼저 입력한것 출력
  */
