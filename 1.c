@@ -18,38 +18,10 @@ int main(void)
         if (t == (int)t)
         {
             i_n=1;
-            if (t < 0)
-            {
-                if (max_i < 0)
-                    max_i = -max_i<-t?(int)t:max_i;
-                else
-                    max_i = max_i<-t?(int)t:max_i;
-            }
-            else
-            {
-                if (max_i < 0)
-                    max_i = -max_i<t?(int)t:max_i;
-                else
-                    max_i = max_i<t?(int)t:max_i;
-            }
+            max_i = t<0?(max_i<0?(max_i = -max_i<-t?(int)t:max_i):(max_i = max_i<-t?(int)t:max_i)):(max_i<0?(max_i = -max_i<t?(int)t:max_i):(max_i = max_i<t?(int)t:max_i));
         }
         else
-        {
-            if (t < 0)
-            {
-                if (max_d < 0)
-                    max_d = -max_d<-t?t:max_d;
-                else
-                    max_d = max_d<-t?t:max_d;
-            }
-            else
-            {
-                if (max_d < 0)
-                    max_d = -max_d<t?t:max_d;
-                else
-                    max_d = max_d<t?t:max_d;
-            }
-        }
+            max_d = t<0?(max_d<0?(max_d = -max_d<-t?t:max_d):(max_d = max_d<-t?t:max_d)):(max_d = max_d<0?(max_d = -max_d<t?t:max_d):(max_d = max_d<t?t:max_d));
     }
 
     if (max_d !=0)
